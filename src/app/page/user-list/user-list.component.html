@@ -23,11 +23,11 @@
     <table class="table  table-striped">
       <thead class="thead-dark" >
         <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Address</th>
-          <th>Active</th>
+          <th (click)="tableSort('id')">#</th>
+          <th (click)="tableSort('name')">Name</th>
+          <th (click)="tableSort('email')">Email</th>
+          <th (click)="tableSort('address')">Address</th>
+          <th (click)="tableSort('active')">Active</th>
           <th></th>
         </tr>
       </thead>

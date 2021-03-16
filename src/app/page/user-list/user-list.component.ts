@@ -22,6 +22,11 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
   }
+  tableSort(name: string){
+    this.orderName=name;
+    console.log("sort name:", this.orderName );
+    this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
+  }
   deleteUser(id: number){
   if(confirm('Are you sure?')){
     this.userService.delete(id).subscribe(
