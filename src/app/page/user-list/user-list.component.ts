@@ -12,25 +12,30 @@ import { UserService } from 'src/app/service/user.service';
 export class UserListComponent implements OnInit {
 
   phrase: string='';
-  orderName: string='name';
-  users$: Observable<User[]> =this.userService.getAll(`?_sort=${this.orderName}&_order=asc`);
+  sortName: string='name';
+  sortDirection: number=1;
+  directionName: string="asc"
+  users$: Observable<User[]> =this.userService.getAll(`?_sort=${this.sortName}&_order=${this.directionName}`);
 
   constructor(
     private userService: UserService,
   ) { }
 
   ngOnInit(): void {
-    this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
+    this.users$=this.userService.getAll(`?_sort=${this.sortName}&_order=${this.directionName}`)
   }
-  tableSort(name: string){
-    this.orderName=name;
-    console.log("sort name:", this.orderName );
-    this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
+  tableSort(name: string):void{
+    if (name==this.sortName){
+      this.sortDirection=this.sortDirection*-1;
+    }else{this.sortName=name}
+    this.sortDirection==1? this.directionName='asc': this.directionName='desc'
+    console.log("sort name:", this.sortName , this.sortDirection);
+    this.users$=this.userService.getAll(`?_sort=${this.sortName}&_order=${this.directionName}`)
   }
   deleteUser(id: number){
   if(confirm('Are you sure?')){
     this.userService.delete(id).subscribe(
-      ()=>this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
+      ()=>this.users$=this.userService.getAll(`?_sort=${this.sortName}&_order=${this.directionName}`)
     );
   }else{
     console.log("nincs törlés");}

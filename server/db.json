@@ -485,7 +485,7 @@
     },
     {
       "id": 81,
-      "name": "Alie Dawkins Bero",
+      "name": "Alie Dawkins ",
       "email": "adawkins28@altervista.org",
       "address": "03 La Follette Junction",
       "active": false
@@ -643,6 +643,13 @@
       "address": "Los Angeles",
       "active": true,
       "id": 104
+    },
+    {
+      "name": "Baldwin Alec",
+      "email": "alec@gmail.com",
+      "address": "Los Angeles ali avenue",
+      "active": true,
+      "id": 105
     }
   ]
 }
