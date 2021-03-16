@@ -24,7 +24,7 @@
               <button [routerLink]="['user/' + user.id]" class="btn btn-info">
                 <i class="fa fa-pencil"></i>
               </button>
-              <button class="btn btn-danger">
+              <button (click)="deleteUser(user.id)" class="btn btn-danger">
                 <i class="fa fa-trash"></i>
               </button>
             </div>
