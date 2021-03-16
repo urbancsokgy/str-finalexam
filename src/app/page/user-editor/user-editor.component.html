@@ -8,10 +8,10 @@
         <!-- Validation: min 8 char, max 40 char, required -->
         <input
         class="form-control"
-        type="text"
+        type="text" #name="ngModel"
         name="name" required pattern="^[A-Za-z\s]{8,40}"
         [(ngModel)]="user.name">
-        <small [hidden]="userForm.controls.name.valid || userForm.controls.name.pristine" class="">
+        <small [hidden]="name.valid || userForm.controls.name.pristine" class="">
           Please add a name, min 8 char, max 40 char, required
         </small>
 
@@ -22,10 +22,10 @@
           Help: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript -->
           <input
           class="form-control"
-          type="email" required pattern="^[A-Za-z.0-9]+@[A-Za-z\s.]+$"
-          name="email"
+          type="email" required pattern="^[A-Za-z.0-9]+@[A-Za-z\s.0-9]+$"
+          name="email" #email="ngModel"
           [(ngModel)]="user.email">
-          <small [hidden]="userForm.controls.email.valid || userForm.controls.name.pristine" class="">
+          <small [hidden]="email.valid || userForm.controls.name.pristine" class="">
             Please add an email address, required
           </small>
           <!-- {{userForm.controls.email.valid}} -->
@@ -36,9 +36,9 @@
           <input
           class="form-control"
           type="text" required pattern="^[A-Za-z\s.0-9]{8,100}"
-          name="address"
+          name="address" #address="ngModel"
           [(ngModel)]="user.address">
-          <small [hidden]="userForm.controls.address.valid || userForm.controls.address.pristine" class="">
+          <small [hidden]="address.valid || userForm.controls.address.pristine" class="">
             Please add an address, min 8 char, max 100 char, required
           </small>
           <!-- {{userForm.controls.address.valid}} -->

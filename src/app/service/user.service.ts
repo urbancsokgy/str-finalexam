@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../model/user';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { User } from '../model/user';
 export class UserService {
 
   endpoint: string = 'http://localhost:3000/users';
+  list$: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 
   constructor(
     private http: HttpClient
@@ -18,9 +19,17 @@ export class UserService {
    * Get all users from the database.
    * @returns on observable with all users.
    */
-  getAll(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.endpoint}`);
+   getAll(param?:string): Observable<User[]> {
+     !param? param='': param;
+    this.list$.next([]);
+    this.http.get<User[]>(`${this.endpoint}${param}`).subscribe(
+      user => this.list$.next(user)
+    );
+    return this.list$;
   }
+  // getAll(): Observable<User[]> {
+  //   return this.http.get<User[]>(`${this.endpoint}`);
+  // }
 
   /**
    * Get a specified user from the database by id.

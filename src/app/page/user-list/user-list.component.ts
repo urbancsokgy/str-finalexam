@@ -11,19 +11,21 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UserListComponent implements OnInit {
 
-  users$: Observable<User[]> = this.userService.getAll();
   phrase: string='';
+  orderName: string='name';
+  users$: Observable<User[]> =this.userService.getAll(`?_sort=${this.orderName}&_order=asc`);
 
   constructor(
     private userService: UserService,
   ) { }
 
   ngOnInit(): void {
+    this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
   }
   deleteUser(id: number){
   if(confirm('Are you sure?')){
     this.userService.delete(id).subscribe(
-      ()=>this.users$=this.userService.getAll()
+      ()=>this.users$=this.userService.getAll(`?_sort=${this.orderName}&_order=asc`)
     );
   }else{
     console.log("nincs törlés");}

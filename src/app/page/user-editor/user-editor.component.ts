@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-
+import { Location } from '@angular/common'
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -33,6 +33,7 @@ export class UserEditorComponent implements OnInit {
   constructor(
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
+    private location: Location,
 
     private router: Router,
   ) { }
@@ -41,11 +42,14 @@ export class UserEditorComponent implements OnInit {
   }
   onFormSubmit(user: User){
     if (user.id==0){
-        // console.log(user);
+        console.log(user);
         this.userService.create(user).subscribe();
-        this.router.navigateByUrl('');
-    }else{
-      this.userService.update(user).subscribe();
+        this.location.back()
+        // this.router.navigateByUrl('');
+      }else{
+        this.userService.update(user).subscribe();
+        // this.router.navigateByUrl('');
+        this.location.back()
     }
 
   }
