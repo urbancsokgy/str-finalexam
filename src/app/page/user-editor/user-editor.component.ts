@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { User } from 'src/app/model/user';
+
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -38,6 +38,13 @@ export class UserEditorComponent implements OnInit {
   ngOnInit(): void {
   }
   onFormSubmit(user: User){
-    console.log(user);
+    if (user.id==0){
+
+        console.log(user);
+        this.userService.create(user).subscribe();
+    }else{
+
+    }
+
   }
 }

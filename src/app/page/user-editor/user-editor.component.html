@@ -22,7 +22,7 @@
           Help: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript -->
           <input
           class="form-control"
-          type="email" required pattern="^[A-Za-z.]+@[A-Za-z\s.]+$"
+          type="email" required pattern="^[A-Za-z.0-9]+@[A-Za-z\s.]+$"
           name="email"
           [(ngModel)]="user.email">
           <small [hidden]="userForm.controls.email.valid || userForm.controls.name.pristine" class="">
@@ -51,7 +51,7 @@
           <option [ngValue]="false">inactive</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary btn-block mt-5">
+      <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-block mt-5">
         <i class="fa fa-save"></i>
       </button>
       {{userForm.value |json}}

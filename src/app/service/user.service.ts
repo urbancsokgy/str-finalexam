@@ -46,6 +46,7 @@ export class UserService {
    * The method is: this.http.post
    */
    create(user: User):Observable<any>{
+    delete user.id;
     return this.http.post<Observable<any>>(this.endpoint,user)
   }
 
