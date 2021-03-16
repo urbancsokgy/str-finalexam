@@ -3,7 +3,6 @@
     <h2>User List</h2>
     <div class="input-group mb-3">
       <!-- [(ngModel)]="phrase" -->
-      <!-- (keyup.enter)="phrase=search.value" -->
       <input type="text"
       #search  (keyup.enter)="phrase=search.value" (blur)="phrase=search.value"
       (focus)="search.value='';phrase=''" (keyup.esc)="phrase='';search.value=''"
