@@ -36,5 +36,5 @@ export class UserEditorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onSubmit(){}
 }
