@@ -608,6 +608,20 @@
       "address": "Alabama city",
       "active": true,
       "id": 99
+    },
+    {
+      "name": "Bolond Botond",
+      "email": "botika@ms.hu",
+      "address": "Devecser",
+      "active": false,
+      "id": 100
+    },
+    {
+      "name": "Bakos Boglarka",
+      "email": "bogi@hu.hu",
+      "address": "Kerecsend",
+      "active": true,
+      "id": 101
     }
   ]
 }
