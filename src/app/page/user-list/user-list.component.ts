@@ -20,9 +20,12 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
   deleteUser(id: number){
+  if(confirm('Are you sure?')){
     this.userService.delete(id).subscribe(
       ()=>this.users$=this.userService.getAll()
     );
-    ;
+  }else{
+    console.log("nincs törlés");}
   }
 }
+
