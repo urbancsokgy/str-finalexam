@@ -1,3 +1,4 @@
+import { User } from './../../model/user';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -36,5 +37,7 @@ export class UserEditorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(){}
+  onFormSubmit(user: User){
+    console.log(user);
+  }
 }
