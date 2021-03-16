@@ -23,11 +23,27 @@
     <table class="table  table-striped">
       <thead class="thead-dark" >
         <tr>
-          <th (click)="tableSort('id')">#</th>
-          <th (click)="tableSort('name')">Name</th>
-          <th (click)="tableSort('email')">Email</th>
-          <th (click)="tableSort('address')">Address</th>
-          <th (click)="tableSort('active')">Active</th>
+          <th (click)="tableSort('id')">#
+              <i *ngIf="sortName=='id' && sortDirection==-1" class="fa fa-sort-amount-desc"></i>
+              <i *ngIf="sortName=='id' && sortDirection==1" class="fa fa-sort-amount-asc"></i>
+            </th>
+          <th (click)="tableSort('name')">
+            Name
+            <i *ngIf="sortName=='name' && sortDirection==-1" class="fa fa-sort-amount-desc"></i>
+            <i *ngIf="sortName=='name' && sortDirection==1" class="fa fa-sort-amount-asc"></i></th>
+          <th (click)="tableSort('email')">
+            Email
+            <i *ngIf="sortName=='email' && sortDirection==-1" class="fa fa-sort-amount-desc"></i>
+              <i *ngIf="sortName=='email' && sortDirection==1" class="fa fa-sort-amount-asc"></i>
+          </th>
+          <th (click)="tableSort('address')">
+            Address
+            <i *ngIf="sortName=='address' && sortDirection==-1" class="fa fa-sort-amount-desc"></i>
+            <i *ngIf="sortName=='address' && sortDirection==1" class="fa fa-sort-amount-asc"></i></th>
+          <th (click)="tableSort('active')">
+            Active
+            <i *ngIf="sortName=='active' && sortDirection==-1" class="fa fa-sort-amount-desc"></i>
+            <i *ngIf="sortName=='active' && sortDirection==1" class="fa fa-sort-amount-asc"></i></th>
           <th></th>
         </tr>
       </thead>
