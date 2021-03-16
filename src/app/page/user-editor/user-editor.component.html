@@ -35,7 +35,7 @@
           <!-- Validation: min 8 char, max 100 char, required -->
           <input
           class="form-control"
-          type="text" required pattern="^[A-Za-z\s.0-9]{8,100}"
+          type="text" required pattern="^[A-Za-z\s.0-9,]{8,100}"
           name="address" #address="ngModel"
           [(ngModel)]="user.address">
           <small [hidden]="address.valid || userForm.controls.address.pristine" class="">
@@ -54,7 +54,7 @@
       <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-block mt-5">
         <i class="fa fa-save"></i>
       </button>
-      {{userForm.value |json}}
+      <!-- {{userForm.value |json}} -->
     </form>
   </div>
 </div>

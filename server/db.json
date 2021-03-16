@@ -610,20 +610,6 @@
       "id": 99
     },
     {
-      "name": "Bolond Botond",
-      "email": "botika@ms.hu",
-      "address": "Devecser",
-      "active": false,
-      "id": 100
-    },
-    {
-      "name": "Bakos Boglarka",
-      "email": "bogi@hu.hu",
-      "address": "Kerecsend",
-      "active": true,
-      "id": 101
-    },
-    {
       "name": "Cecil Ciredrin",
       "email": "urbancsokgy@gmail.com",
       "address": "valaki street",
@@ -647,9 +633,30 @@
     {
       "name": "Baldwin Alec",
       "email": "alec@gmail.com",
-      "address": "Los Angeles ali avenue",
-      "active": true,
+      "address": "Los Angeles Rodeo drive",
+      "active": false,
       "id": 105
+    },
+    {
+      "name": "Astra Zeneca",
+      "email": "astra@gmail.com",
+      "address": "England Downing street",
+      "active": false,
+      "id": 106
+    },
+    {
+      "name": "Carl Gustav Emil Mannerheim",
+      "email": "cgmannerheim@suomi.com",
+      "address": "Suomi Helsinki Lapinmaannie",
+      "active": false,
+      "id": 107
+    },
+    {
+      "name": "Gustavus Adolphus",
+      "email": "gasverige@svearike.com",
+      "address": "Stockholm, Carl Gustaf street",
+      "active": false,
+      "id": 108
     }
   ]
 }

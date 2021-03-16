@@ -8,13 +8,13 @@
       #search  (keyup.enter)="phrase=search.value" (blur)="phrase=search.value"
       (focus)="search.value='';phrase=''" (keyup.esc)="phrase='';search.value=''"
       class="form-control"
-       placeholder="Press Enter or click the icon after typing the keywords" aria-label="search"
+       placeholder="Press Enter or click the icon after typing the name" aria-label="search"
       >
       <div class="input-group-append">
         <span class="input-group-text btn-success" id="basic-addon2"><i class="fa fa-search"></i></span>
       </div>
     </div>
-    <div class="row text-center mt-0" *ngIf="phrase!=''"><p>Press Esc to start new search</p></div>
+    <div class="row text-center mt-0" *ngIf="phrase!=''"><p>Press Esc to begin a new search</p></div>
      <!-- new button -->
      <button  type="submit" class="btn mb-3 btn-primary btn-block mt-5" routerLink="user/0">
       <i _ngcontent-lqi-c45="" class="fa fa-user-plus fa-2x"></i>
