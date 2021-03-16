@@ -57,13 +57,6 @@
       "active": true
     },
     {
-      "id": 12,
-      "name": "Gawain McKillop",
-      "email": "gmckillopb@geocities.jp",
-      "address": "0 School Way",
-      "active": false
-    },
-    {
       "id": 13,
       "name": "Kalinda Antonik",
       "email": "kantonikc@chronoengine.com",
@@ -421,13 +414,6 @@
       "active": true
     },
     {
-      "id": 69,
-      "name": "Jaine McCallum",
-      "email": "jmccallum1w@mac.com",
-      "address": "9 Butterfield Lane",
-      "active": false
-    },
-    {
       "id": 70,
       "name": "Silvana Gaitskell",
       "email": "sgaitskell1x@fda.gov",
@@ -454,13 +440,6 @@
       "email": "blibbis20@myspace.com",
       "address": "2846 Trailsway Point",
       "active": true
-    },
-    {
-      "id": 74,
-      "name": "Ethe Esser",
-      "email": "eesser21@posterous.com",
-      "address": "14 Elmside Alley",
-      "active": false
     },
     {
       "id": 75,
@@ -629,20 +608,6 @@
       "email": "mlindroos2p@i2i.jp",
       "address": "5598 Cody Junction",
       "active": true
-    },
-    {
-      "id": 99,
-      "name": "Olga MacNeilage",
-      "email": "omacneilage2q@fc2.com",
-      "address": "8 North Park",
-      "active": false
-    },
-    {
-      "id": 100,
-      "name": "Milzie Cosbee",
-      "email": "mcosbee2r@go.com",
-      "address": "0642 Spaight Junction",
-      "active": false
     }
   ]
 }

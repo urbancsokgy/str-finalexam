@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { subscribeOn } from 'rxjs/operators';
 import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/service/user.service';
 
@@ -19,7 +20,9 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
   deleteUser(id: number){
-    this.userService.delete(id).subscribe();
-    this.users$= this.userService.getAll();
+    this.userService.delete(id).subscribe(
+      ()=>this.users$=this.userService.getAll()
+    );
+    ;
   }
 }
